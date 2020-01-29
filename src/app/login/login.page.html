@@ -1,0 +1,65 @@
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>
+
+        <h1 class="ion-text-center">
+
+          <img src="assets/icon/tracking.jpg" class="logo" alt="Track Technologies">
+          <!-- <ion-icon name="done-all" color="primary" class="icon-7em"></ion-icon> -->
+        </h1>
+
+
+        <div class="ion-text-center">
+          <span class="texto-reduzido">Login to</span>
+          <h3>Tracking Tech</h3>
+        </div>
+        <form [formGroup]='loginForm' (submit)="logar()">
+          <ion-item>
+            <ion-icon name="mail" color="primary" slot="start"></ion-icon>
+            <ion-input type="email" placeholder="Email" formControlName="email" inputmode="email" autofocus="true">
+            </ion-input>
+            <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')">
+              Obrigatório
+            </ion-note>
+            <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('email')">
+              Email inválido
+            </ion-note>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="lock" color="primary" slot="start"></ion-icon>
+            <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+            <ion-note slot="end" color="danger" *ngIf="password.dirty && password.hasError('required')">
+              Obrigatório
+            </ion-note>
+            <ion-note slot="end" color="danger" *ngIf="password.dirty && password.hasError('minlength')">
+              Min 6 caracteres
+            </ion-note>
+          </ion-item>
+
+          <div class="grid">
+            <ion-button color="primary" expand="block" fill="outline" type="submit" [disabled]="loginForm.invalid">
+              Sign-In
+            </ion-button>
+
+            <ion-button color="primary" expand="block" fill="outline" (click)="signup()">
+              Sign-Up
+            </ion-button>
+          </div>
+
+        </form>
+        <div class="centralizado rf-top-1">
+          <a href="#" class="primary">Forget your password?</a>
+        </div>
+       
+        <!--<ion-button color="madeira" expand="block" (click)="onSubmit(authProviders.Facebook)">
+          <ion-icon name="logo-facebook" slot="start"></ion-icon>
+          Login com Facebook
+        </ion-button>-->
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

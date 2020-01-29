@@ -24,3 +24,23 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.texto-destaque {
+    font-size: 1.5em;
+    font-weight: bold   ;
+}
+
+.texto-reduzido{
+    font-size: 0.8em;
+    color: gray;
+}
+
+.centralizado {
+    display: flex;
+    justify-content: center;
+}
+
+.rf-top-1{
+    margin-top: 1px;
+}

@@ -1,0 +1,25 @@
+.cabecalho {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.logo-esquerda {
+    grid-row: 1 /span 2;
+    grid-column: 1;
+}
+
+.texto-direita-cima {
+    grid-row: 1;
+    grid-column: 2 /span 5;
+    align-self: flex-end;
+}
+
+.texto-direita-baixo {
+    grid-row: 2;
+    grid-column: 2 /span 5;
+    margin-top: 0;
+    font-weight: bold;
+    align-self: flex-start;
+}
