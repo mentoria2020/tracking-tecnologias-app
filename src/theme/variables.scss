@@ -68,10 +68,18 @@
   --ion-color-medium-tint: #a2a4ab;
 
   /** light **/
-  --ion-color-light: #f4f5f8;
+  --ion-color-light: #ffffff;
   --ion-color-light-rgb: 244, 244, 244;
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Cinza padrao **/
+  --ion-color-cinza: #f2f2f2;
+  --ion-color-cinza-rgb: 242,242,242;
+  --ion-color-cinza-contrast: #000000;
+  --ion-color-cinza-contrast-rgb: 0,0,0;
+  --ion-color-cinza-shade: #d5d5d5;
+  --ion-color-cinza-tint: #f3f3f3;
 }

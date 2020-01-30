@@ -1,16 +1,77 @@
-<ion-header>
-  <ion-toolbar>
-    <div class="cabecalho">
+<!-- <ion-header> -->
+<!-- <ion-toolbar> -->
+
+<!-- <div class="cabecalho">
       <img src="assets/icon/tracking.jpg" class="logo-esquerda" alt="Track Technologies">      
         <span class='texto-direita-cima'> Signing up to</span>
         <h3 class='texto-direita-baixo'>Tracking Tech</h3>
       
+    </div> -->
+
+
+<!-- </ion-toolbar> -->
+<!-- </ion-header> -->
+
+<ion-content color="cinza">
+  <div class="header-signup">
+    <img src="assets/icon/tracking.jpg" class="logo-esquerda" alt="Track Technologies">
+    <div class="centralizado">
+      <div class="centralizado-vertical">
+        <span class='texto-direita-cima'> Signing up to</span>
+        <span class='texto-direita-baixo'>Tracking Tech</span>
+      </div>
     </div>
+  </div>
 
+  <ion-card color="light">
+    <ion-card-content>
+      <form [formGroup]='signupForm' class="formulario" (submit)="salvar()">
+        <ion-list inset="true">
+          <ion-item>
+            <ion-input autofocus="true" autocapitalize="on" placeholder="Name" formControlName="nome" inputmode="text">
+            </ion-input>
+            <ion-note slot="end" color="danger" *ngIf="nome.dirty && nome.hasError('required')">
+              Obrigatório
+            </ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Surname" autocapitalize="on" formControlName="surname" inputmode="text">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="email" placeholder="Email" formControlName="email" inputmode="email">
+            </ion-input>
+            <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')">
+              Required
+            </ion-note>
+            <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('email')">
+              Invalid Email
+            </ion-note>
+          </ion-item>
+          <!-- <div > -->
+          <!-- <ion-item>
+                          
+            </ion-item> -->
+          <ion-item>
 
-  </ion-toolbar>
-</ion-header>
+            <ion-input slot="start" type="password" placeholder="Password" formControlName="password"
+              inputmode="password">
+            </ion-input>
 
-<ion-content>
+            <ion-input slot="end" type="password" placeholder="Repeat" formControlName="password2" inputmode="password">
+            </ion-input>
 
+          </ion-item>
+          <ion-note *ngIf="signupForm.hasError('passwordNotMatch')">
+            Senhas não batem
+          </ion-note>
+          <!-- </div> -->
+          <ion-item>
+            <ion-input placeholder="City" formControlName="city" inputmode="text">
+            </ion-input>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
