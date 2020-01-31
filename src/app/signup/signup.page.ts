@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'track-signup',
@@ -10,28 +12,49 @@ export class SignupPage implements OnInit {
 
   signupForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private router:Router) { }
 
   ngOnInit() {
     this.signupForm = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       surname: ['', []],
-      password: ['', [Validators.required]],
+      password: ['', Validators.compose([Validators.required])],
       password2: ['', [Validators.required]],
       city: [''],
-    }, { validators: SignupPage.validPassword });
+      profession: ['']
+    }, { validators: SignupPage.validarPassword });
   }
 
-  static validPassword(cg: FormGroup) {
+
+  voltar(event) {
+    //event.preventDefault();
+    this.router.navigateByUrl('/login');
+  }
+
+  // validarPassword(fc: FormControl) {
+  //   let pwd1 = this.password;
+  //   let pwd2 = this.password2;
+
+  //   let rv: { [error: string]: any } = {};
+  //   if ((pwd1.touched || pwd2.touched) && pwd1.value !== pwd2.value) {
+  //      return { passwordNotMatch: true }
+  //   }
+  //   return rv;
+
+  // }
+
+  static validarPassword(cg: FormGroup) {
     let pwd1 = cg.get('password');
     let pwd2 = cg.get('password2');
+
     let rv: { [error: string]: any } = {};
     if ((pwd1.touched || pwd2.touched) && pwd1.value !== pwd2.value) {
-       return { passwordNotMatch: true }
+      return { passwordNotMatch: true }
     }
     return rv;
-    
+
   }
 
   get nome(): FormControl {
@@ -52,6 +75,10 @@ export class SignupPage implements OnInit {
 
   get password2(): FormControl {
     return <FormControl>this.signupForm.get('password2');
+  }
+
+  get profession(): FormControl {
+    return <FormControl>this.signupForm.get('profession');
   }
 
 }
