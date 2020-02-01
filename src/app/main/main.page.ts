@@ -13,14 +13,14 @@ export class MainPage {
 
   public appPages = [
     {
-      title: 'Início',
-      url: '/home',
+      title: 'Check-In',
+      url: '/main/check-in',
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Dashboard',
+      url: '/main/dashboard', 
+      icon:'pie'     
     }
   ];
 

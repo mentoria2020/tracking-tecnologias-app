@@ -1,0 +1,40 @@
+<ion-header no-border>
+  <ion-toolbar color="cinza">
+    <ion-buttons slot="start">
+      <img src="assets/icon/tracking.jpg" (click)="abrirMenu()" class="logo-esquerda" alt="Track Technologies">
+      <div class="centralizado">
+        <div class="centralizado-vertical">
+          <span class='texto-direita-cima'>Tracking Tech</span>
+          <span class='texto-direita-baixo'>Check-in</span>
+        </div>
+      </div>
+
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="save"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="cinza">
+  <ion-searchbar placeholder="Technology" animated="true" inputmode="text" type="text"
+    (ionChange)="onSearchChange($event)" [debounce]="250"></ion-searchbar>
+
+  <ion-card color="light">
+    <ion-card-content>
+      <ion-list inset="true">
+        <ion-item>
+          <ion-label>Angular</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+</ion-content>

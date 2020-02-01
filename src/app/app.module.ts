@@ -10,10 +10,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginPage } from './login/login.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MainPage } from './main/main.page';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, MainPage],
+  declarations: [AppComponent, LoginPage],
   entryComponents: [],
   imports: [
     BrowserModule,

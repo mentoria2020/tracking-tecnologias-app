@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { AppComponent } from '../app.component';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'track-login',
@@ -13,7 +11,7 @@ export class LoginPage implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router:Router) {
+  constructor(private fb: FormBuilder, private navCtrl: NavController) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -33,14 +31,15 @@ export class LoginPage implements OnInit {
 
   }
 
-  logar(){
-
+  logar() {
+    this.navCtrl.navigateRoot('/main', {
+      animated: true,
+      animationDirection: 'forward'
+    });
   }
 
-  signup(){
-    this.router.navigateByUrl('/signup');
-    //this.navCtrl.navigateForward('/signup');
-
+  signup() {
+    this.navCtrl.navigateForward('/signup');
   }
 
 }

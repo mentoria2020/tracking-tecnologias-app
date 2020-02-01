@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'track-signup',
@@ -12,8 +11,7 @@ export class SignupPage implements OnInit {
 
   signupForm: FormGroup;
 
-  constructor(private fb: FormBuilder,
-    private router:Router) { }
+  constructor(private fb: FormBuilder, private navCtrl:NavController) { }
 
   ngOnInit() {
     this.signupForm = this.fb.group({
@@ -25,12 +23,6 @@ export class SignupPage implements OnInit {
       city: [''],
       profession: ['']
     }, { validators: SignupPage.validarPassword });
-  }
-
-
-  voltar(event) {
-    //event.preventDefault();
-    this.router.navigateByUrl('/login');
   }
 
   // validarPassword(fc: FormControl) {

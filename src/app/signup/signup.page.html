@@ -1,14 +1,19 @@
-<ion-content color="cinza">
-  <div class="header-signup">    
-   <!-- <a (click)="voltar()"> <img src="assets/icon/voltar.png" id="btnVoltar" ></a>-->
-    <img src="assets/icon/tracking.jpg" class="logo-esquerda" alt="Track Technologies">
-    <div class="centralizado">
-      <div class="centralizado-vertical">
-        <span class='texto-direita-cima'> Signing up to</span>
-        <span class='texto-direita-baixo'>Tracking Tech</span>
+<ion-header no-border>
+  <ion-toolbar color="cinza">
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="login"></ion-back-button>
+      <img src="assets/icon/tracking.jpg" class="logo-esquerda" alt="Track Technologies">
+      <div class="centralizado">
+        <div class="centralizado-vertical">
+          <span class='texto-direita-cima'> Signing up to</span>
+          <span class='texto-direita-baixo'>Tracking Tech</span>
+        </div>
       </div>
-    </div>
-  </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="cinza">
 
   <ion-card color="light">
     <ion-card-content>
@@ -68,11 +73,7 @@
           <ion-button expand="block" fill="outline">
             <ion-icon slot="icon-only" name="contact"></ion-icon>
             Sign-Up
-          </ion-button>
-          <ion-button expand="block" fill="outline" (click)="voltar()">
-            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-            Back
-          </ion-button>
+          </ion-button>   
         </ion-list>
       </form>
     </ion-card-content>

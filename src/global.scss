@@ -37,7 +37,7 @@
 
 .texto-destaque {
     font-size: 1.5em;
-    font-weight: bold   ;
+    font-weight: bold;
 }
 
 // .formulario {
@@ -48,7 +48,7 @@
 // }
 
 
-.texto-reduzido{
+.texto-reduzido {
     font-size: 0.8em;
     color: gray;
 }
@@ -59,18 +59,50 @@
     width: 100%;
 }
 
-.centralizado-vertical{
-    display: flex;    
+.centralizado-vertical {
+    display: flex;
     align-self: center;
     flex-direction: column;
 }
 
-.rf-top-1{
+.rf-top-1 {
     margin-top: 1px;
 }
 
-.grid-2-colunas{
+.grid-2-colunas {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
+}
+
+.logo-esquerda {
+    height: 48px;
+    width: 48px;
+}
+
+.texto-direita-cima {
+    font-size: 0.7em;
+}
+
+.texto-direita-baixo {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+ion-searchbar {
+    .searchbar-input-container {
+        .searchbar-input {
+            border-radius: 10px !important;
+        }
+
+        .searchbar-search-icon {
+            //TODO: Nao fica legal quando a tela cresce muito
+            left: 90%;
+        }
+
+        .searchbar-clear-button {
+            left: 16px;
+        }
+    }
+
 }
