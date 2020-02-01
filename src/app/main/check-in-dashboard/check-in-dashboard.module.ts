@@ -4,17 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CheckInDashboardPageRoutingModule } from './check-in-dashboard-routing.module';
-
 import { CheckInDashboardPage } from './check-in-dashboard.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CheckInDashboardPageRoutingModule
+    RouterModule.forChild([{
+      path: '',
+      component: CheckInDashboardPage
+    }])
   ],
   declarations: [CheckInDashboardPage]
 })
-export class CheckInDashboardPageModule {}
+export class CheckInDashboardPageModule { }

@@ -106,3 +106,24 @@ ion-searchbar {
     }
 
 }
+
+.tech-line {
+    display: grid;
+    // grid-template-columns: 1fr 1fr;    
+    grid-template-rows: 1fr 1fr;
+    padding-top: 10px;    
+}
+
+.tech-line .tech {
+    font-size: 1em;
+    font-weight: bold;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+}
+
+.tech-line .info2 {
+    font-size: 0.7em;
+    grid-column: 2;
+    grid-row: 2;
+}

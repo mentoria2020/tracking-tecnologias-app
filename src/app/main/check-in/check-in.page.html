@@ -26,9 +26,18 @@
   <ion-card color="light">
     <ion-card-content>
       <ion-list inset="true">
-        <ion-item>
-          <ion-label>Angular</ion-label>
-        </ion-item>
+        <ion-item *ngFor="let vaTech of filteredTechs">
+          <div class="tech-line">
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <span class="tech">{{vaTech?.Nome}}</span>
+            <!-- <span class="qtde">{{vaTech?.QtdeCheckIn.toLocaleString('pt-BR')}} check-ins</span> -->
+            <span class="info2">{{vaTech?.Parents}}</span>
+          </div>
+
+        </ion-item>       
       </ion-list>
     </ion-card-content>
   </ion-card>

@@ -1,9 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>check-in-dashboard</ion-title>
+<ion-header no-border>
+  <ion-toolbar color="cinza">
+    <ion-buttons slot="start">
+      <img src="assets/icon/tracking.jpg" (click)="abrirMenu()" class="logo-esquerda" alt="Track Technologies">
+      <div class="centralizado">
+        <div class="centralizado-vertical">
+          <span class='texto-direita-cima'>Tracking Tech</span>
+          <span class='texto-direita-baixo'></span>
+        </div>
+      </div>
+
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="recarregar()">
+        <ion-icon slot="icon-only" name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content color="cinza">
+  <ion-card color="light">
+    <ion-card-content>
+      <ion-list inset="true">
+        <ion-item *ngFor="let vaTech of techs | async">
+          <div class="tech-line">            
+            <span class="tech">{{vaTech?.Nome}}</span>
+            <span class="info2">{{vaTech?.QtdeCheckIn.toLocaleString('pt-BR')}} check-ins</span>                       
+          </div>
+         
+        </ion-item>       
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <canvas id='pie'></canvas>
 </ion-content>
